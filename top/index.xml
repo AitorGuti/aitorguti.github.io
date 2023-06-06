@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tops on My New Hugo Site</title>
+    <link>http://example.org/top/</link>
+    <description>Recent content in Tops on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://example.org/top/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/top/about/</guid>
+      <description>About I&amp;rsquo;m Aitor Gutierrez Valero from Spain.
+Currently entering my 5th year of MChem at the University of Edinburgh.</description>
+    </item>
+    
+    <item>
+      <title>Posts Archive</title>
+      <link>http://example.org/top/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/top/archive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
