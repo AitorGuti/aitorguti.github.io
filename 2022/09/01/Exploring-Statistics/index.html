@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Posts Archive" />
-    <meta property="og:title" content="Posts Archive" />
-    <meta property="twitter:title" content="Posts Archive" />
+    <meta name="title" content="Exploring Statistics" />
+    <meta property="og:title" content="Exploring Statistics" />
+    <meta property="twitter:title" content="Exploring Statistics" />
     
 
     
-    <meta name="description" content="Archive of historical posts.">
-    <meta property="og:description" content="Archive of historical posts." />
-    <meta property="twitter:description" content="Archive of historical posts." />
+    <meta name="description" content="Aitor Gutierrez Valero">
+    <meta property="og:description" content="Aitor Gutierrez Valero" />
+    <meta property="twitter:description" content="Aitor Gutierrez Valero" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Aitor, blog, Spain">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Posts Archive | Aitor&#39;s Cloud</title>
+    <title>Exploring Statistics | Aitor&#39;s Cloud</title>
 
-    <link rel="canonical" href="/top/archive/">
+    <link rel="canonical" href="/2022/09/01/Exploring-Statistics/">
 
     
     
@@ -167,14 +167,41 @@ if (!doNotTrack) {
 
 
 
-<header class="intro-header" style="background-image: url('https://live.staticflickr.com/65535/52461746395_60a797166a_6k.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://live.staticflickr.com/65535/52461746395_60a797166a_6k.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Aitor&#39;s Cloud </h1>
-                    
-		    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/" title="[rstudio r Foundation]">
+                            [rstudio r Foundation]
+                        </a>
+                        
+                    </div>
+                    <h1>Exploring Statistics</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Aitor Gutierrez Valero
+                             
+                            on 
+                            Thursday, September 1, 2022
+                            
+                            
+                            
+                            
+                    </span>
                 </div>
             </div>
         </div>
@@ -184,132 +211,179 @@ if (!doNotTrack) {
 
 
 
+<article>
+    <div class="container">
+        <div class="row">
 
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            <div class="archive-list">
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="foundational-concepts">Foundational Concepts</h1>
+<hr>
+<h2 id="population-sample-and-sample-size">Population, Sample, and Sample Size</h2>
+<p>A population is a defined set of individuals, and a sample is a randomly
+selected sub-set of a population. For example: As of 2022, Spain has
+<a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&amp;cid=1254736176951&amp;menu=ultiDatos&amp;idp=1254735572981">4.7M</a>
+people. A sample of the Spanish population would be a random selection
+of 1 - to - 4.69M people in Spain.</p>
+<p>Sample size determines the accuracy of any data calculated from a
+sample. This accuracy can be split into two concepts:</p>
+<p><strong>Confidence Level -</strong></p>
+<pre><code>Certainty that our sample represents the population
+</code></pre>
+<p><strong>Error Margin -</strong></p>
+<pre><code>Certainty that our statistics reflect the population
+</code></pre>
+<p>To elaborate: We find that the average weight of all Spaniards is 70 kg
+with an error margin of 10% and a confidence level of 95%. The error
+margin means that the weight is actually somewhere between 63 and 77 kg,
+and the confidence level means that we are 95% sure that the average is
+between 63 and 77 kg.</p>
+<p>Below is a table comparing the error margin and confidence level for
+different sample sizes of a population of 1 million people.</p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="statistics-vsparameters">Statistics vs. Parameters</h2>
+<p><strong>Statistics -</strong></p>
+<pre><code>The calculated values from a sample
+</code></pre>
+<p><strong>Parameters -</strong></p>
+<pre><code>The true values from a population (Calculable if your sample is the population)
+</code></pre>
+<hr>
+<h2 id="variable-types-used-in-statistics-types-of-data">Variable Types used in Statistics (Types of data)</h2>
+<h4 id="qualitative-categorical">Qualitative (Categorical)</h4>
+<p><strong>Ordinal -</strong></p>
+<pre><code>An ordered set of variables: Always, frequently, sometimes, etc.
+</code></pre>
+<p><strong>Nominal -</strong></p>
+<pre><code>An unordered variable: Gender, Colour, Country, etc.
+</code></pre>
+<h4 id="quantitative">Quantitative</h4>
+<p><strong>Continuous -</strong></p>
+<pre><code>Numerical: Infinite values like height and weight
+</code></pre>
+<p><strong>Discrete -</strong></p>
+<pre><code>Numerical: Countable values like number of people or flowers
+</code></pre>
+<hr>
+<h2 id="three-types-of-statistical-analysis">Three Types of Statistical Analysis</h2>
+<p>Statistics analysis is used to interpret, represent, and extrapolate
+data and its various trends.</p>
+<h3 id="1-bias">1. Bias</h3>
+<p>Defines how error influences the final results.</p>
+<p><strong>Random Error -</strong></p>
+<pre><code> Uncontrollable error in measurement that varies randomly
+ For example: A cup's length is between the smallest increment on your ruler; you round up or down
+</code></pre>
+<p><strong>Systematic Error -</strong></p>
+<pre><code>Error in measurement that skews values consistently
+For example: Scale consistently measures too high by 1 kg.
+</code></pre>
+<h3 id="2-descriptive-statistics">2. Descriptive Statistics</h3>
+<p>Provides an idea of the differences or similarities between data by
+defining averages and spread.</p>
+<p>Below is a data set of numbers for which we will calculate descriptive
+statistics. First are the averages, next is the spread.</p>
+<pre><code>-7, 1, 2, 2, 3, 4, 5, 5, 6, 22
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="3-inferential-statistics">3. Inferential Statistics</h3>
+<p>After exploring data using descriptive statistics, the relationships
+between variables (eg. height vs. weight) and their consistency can be
+determined using inferential statistics. To understand how these
+relationships are tested, the null hypothesis and alternative hypothesis
+are defined. After which, statistical tests are performed.</p>
+<p><strong>Null Hypothesis</strong></p>
+<pre><code>The expected idea based on current knowledge: Population 1 is equivalent to Population 2.
+</code></pre>
+<p><strong>Alternative Hypothesis</strong></p>
+<pre><code>A new idea which could nullify the null hypothesis: Population 1 is different from Population 2
+</code></pre>
+<h4 id="statistical-tests">Statistical Tests</h4>
+<p>Every statistical test produces:</p>
+<pre><code>A test statistic that indicates how closely the data match the null hypothesis
+
+and
+
+A P value for the probability of obtaining said result if the null hypothesis is true
+</code></pre>
+<p>Every parametric statistical test assumes:</p>
+<pre><code>1. Independence of observations:
+   Many measurements of one test subject are not independent,
+   while measurements of many different test subjects are independent
+   
+2. Homogeneity of variance:
+   That variance within each group is similar
+
+3. Normality of data:
+   That quantitative data follows a normal distribution
+</code></pre>
+<p>Choosing a test for parametric data can be done by following the steps
+in the image below. Credit to Scribbr.</p>
+<p>
+  <img src="https://cdn.scribbr.com/wp-content/uploads//2020/01/flowchart-for-choosing-a-statistical-test.png" alt="">
+
+</p>
+
+
+                
+
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 
                 
-                    
-                    
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
                         
-                            
-                            <h1 class="title is-4 has-text-weight-normal">2022</h1>
                         
-                    
-
-                    <ul>
-                    
-                        <li>
-                            <span>09/01</span> — 
-                            <a href="/2022/09/01/Exploring-Statistics/">
-                                Exploring Statistics
-                            </a>
-                        </li>
-                    
-                    </ul>
-
+                    </div>
+                </section>
                 
-                
+
                 
                 
             </div>
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            <a href="/about">
-               <img src="/img/bw-self.png" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Studying Chemistry at the University of Edinburgh</p>
-            
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:aitorg88@gmail.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/AitorGuti">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               
-               
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            
-            
         </div>
-    </section>
-    
+    </div>
+</article>
 
-    
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-<hr />
 
 
 
