@@ -21,9 +21,9 @@
     
 
     
-    <meta name="description" content="Aitor Gutierrez Valero">
-    <meta property="og:description" content="Aitor Gutierrez Valero" />
-    <meta property="twitter:description" content="Aitor Gutierrez Valero" />
+    <meta name="description" content=" ">
+    <meta property="og:description" content=" " />
+    <meta property="twitter:description" content=" " />
     
 
     
@@ -182,13 +182,13 @@ if (!doNotTrack) {
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/" title="[rstudio r Foundation]">
-                            [rstudio r Foundation]
+                        <a class="tag" href="/tags/" title="[Learning]">
+                            [Learning]
                         </a>
                         
                     </div>
                     <h1>Exploring Statistics</h1>
-                    <h2 class="subheading"></h2>
+                    <h2 class="subheading">Describing and defining important concepts in statistics.</h2>
                     <span class="meta">
                         
                             Posted by 
@@ -245,7 +245,37 @@ and the confidence level means that we are 95% sure that the average is
 between 63 and 77 kg.</p>
 <p>Below is a table comparing the error margin and confidence level for
 different sample sizes of a population of 1 million people.</p>
-<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Sample Size</th>
+<th style="text-align:right">Error Margin</th>
+<th style="text-align:right">Confidence Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">31</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">90</td>
+</tr>
+<tr>
+<td style="text-align:right">97</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">95</td>
+</tr>
+<tr>
+<td style="text-align:right">664</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">99</td>
+</tr>
+<tr>
+<td style="text-align:right">16317</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">99</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="statistics-vsparameters">Statistics vs. Parameters</h2>
 <p><strong>Statistics -</strong></p>
@@ -291,8 +321,66 @@ defining averages and spread.</p>
 statistics. First are the averages, next is the spread.</p>
 <pre><code>-7, 1, 2, 2, 3, 4, 5, 5, 6, 22
 </code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Mean</th>
+<th style="text-align:left">Median</th>
+<th style="text-align:left">Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Description</td>
+<td style="text-align:left">Sum of all of the numbers divided by the number of numbers</td>
+<td style="text-align:left">Value separating the upper and lower halves</td>
+<td style="text-align:left">Most frequent value in a dataset</td>
+</tr>
+<tr>
+<td style="text-align:left">Example</td>
+<td style="text-align:left">(-7 + 1 + 2 + … + 22)/10</td>
+<td style="text-align:left">Mean of 3 and 4</td>
+<td style="text-align:left">Bimodal</td>
+</tr>
+<tr>
+<td style="text-align:left">Result</td>
+<td style="text-align:left">4.3</td>
+<td style="text-align:left">3.5</td>
+<td style="text-align:left">2 and 5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Range</th>
+<th style="text-align:left">Standard_Deviation</th>
+<th style="text-align:left">Interquartile_Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Description</td>
+<td style="text-align:left">Difference between the highest and lowest numbers</td>
+<td style="text-align:left">Amount of dispersion from the mean</td>
+<td style="text-align:left">Difference between the 25th (Q1) and 75th (Q3) percentiles</td>
+</tr>
+<tr>
+<td style="text-align:left">Example</td>
+<td style="text-align:left">22 - (-7)</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Q1 = 2 Q3 = 5</td>
+</tr>
+<tr>
+<td style="text-align:left">Result</td>
+<td style="text-align:left">29</td>
+<td style="text-align:left">6.84</td>
+<td style="text-align:left">3</td>
+</tr>
+</tbody>
+</table>
 <h3 id="3-inferential-statistics">3. Inferential Statistics</h3>
 <p>After exploring data using descriptive statistics, the relationships
 between variables (eg. height vs. weight) and their consistency can be
