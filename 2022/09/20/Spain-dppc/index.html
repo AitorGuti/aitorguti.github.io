@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Aitor&#39;s Cloud">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://aitorguti.github.io//https://live.staticflickr.com/65535/52461746395_60a797166a_6k.jpg">
+    <meta property="twitter:image" content="https://aitorguti.github.io//https://live.staticflickr.com/65535/52461746395_60a797166a_6k.jpg" />
+    
+
+    
+    <meta name="title" content="Economic Output of Spanish Provinces" />
+    <meta property="og:title" content="Economic Output of Spanish Provinces" />
+    <meta property="twitter:title" content="Economic Output of Spanish Provinces" />
+    
+
+    
+    <meta name="description" content=" ">
+    <meta property="og:description" content=" " />
+    <meta property="twitter:description" content=" " />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Aitor, blog, Spain">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Economic Output of Spanish Provinces | Aitor&#39;s Cloud</title>
+
+    <link rel="canonical" href="/2022/09/20/Spain-dppc/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-210096427-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Aitor&#39;s Cloud</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/learning/">learning</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/projects/">projects</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://live.staticflickr.com/65535/52461746395_60a797166a_6k.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/project" title="Project">
+                            Project
+                        </a>
+                        
+                        <a class="tag" href="/tags/r" title="r">
+                            r
+                        </a>
+                        
+                        <a class="tag" href="/tags/rstudio" title="Rstudio">
+                            Rstudio
+                        </a>
+                        
+                        <a class="tag" href="/tags/visualisation" title="Visualisation">
+                            Visualisation
+                        </a>
+                        
+                    </div>
+                    <h1>Economic Output of Spanish Provinces</h1>
+                    <h2 class="subheading">How GDP per capita varies across Spain</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Aitor Gutierrez Valero
+                             
+                            on 
+                            Monday, September 19, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h1 id="gdp-per-capita-of-spanish-regions">GDP per capita of Spanish Regions</h1>
+<p>Data from the Instituto Nacional de Estadística and the Instituto
+Geográfico Nacional. Euros Inflation Adjusted to 2019</p>
+<hr>
+<p>First, the 2000 and 2019 figures of GDP per capita are imported.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>GDPpc_spain <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">read_csv</span>(<span style="color:#f1fa8c">&#34;GDP_Per_Capita_Spanish_Regions_2000_2019.csv&#34;</span>) <span style="color:#6272a4">#Import Spanish Provinces Data</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">names</span>(GDPpc_spain)[1]<span style="color:#ff79c6">&lt;-</span><span style="color:#50fa7b">paste</span>(<span style="color:#f1fa8c">&#34;provincia&#34;</span>) <span style="color:#6272a4"># Change Province to provincia</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">head</span>(GDPpc_spain, <span style="color:#bd93f9">1</span>)
+</span></span></code></pre></div><pre><code>## # A tibble: 1 × 3
+##   provincia `2000` `2019`
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Almería    15186  21196
+</code></pre>
+<p>The dataframe is cleaned for merging with one from mapSpain. This turned
+out being unnecessary because of the mapSpain package having many
+options for province names in its large dataframes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>census <span style="color:#ff79c6">&lt;-</span> mapSpain<span style="color:#ff79c6">::</span>pobmun19
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Araba/Álava&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Álava&#34;</span> <span style="color:#6272a4"># Change alava</span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Balears, Illes&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Islas Baleraes&#34;</span> <span style="color:#6272a4"># Change islas baleares</span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Rioja, La&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;La Rioja&#34;</span> <span style="color:#6272a4">#Change La Rioja</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Alicante/Alacant&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Alicante&#34;</span> <span style="color:#6272a4">#Change Alicante for both</span>
+</span></span><span style="display:flex;"><span>GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Alicante/Alacant&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Alicante&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Castellón/Castelló&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Castellón&#34;</span> <span style="color:#6272a4">#Change Castellón for both</span>
+</span></span><span style="display:flex;"><span>GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Castellón/Castelló&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Castellón&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Valencia/València&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Valencia&#34;</span> <span style="color:#6272a4">#Change Valencia for both</span>
+</span></span><span style="display:flex;"><span>GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][GDPpc_spain[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Valencia/València&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Valencia&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census_gdp <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">merge</span>(census,GDPpc_spain,by<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;provincia&#34;</span>)
+</span></span><span style="display:flex;"><span>census_gdp[<span style="color:#f1fa8c">&#34;provincia&#34;</span>][census_gdp[<span style="color:#f1fa8c">&#34;provincia&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Palmas, Las&#34;</span>] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;Las Palmas&#34;</span> <span style="color:#6272a4">#Change Las Palmas</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>codelist <span style="color:#ff79c6">&lt;-</span> mapSpain<span style="color:#ff79c6">::</span>esp_codelist <span style="color:#6272a4"># Names and codes of all provinces, autonomous territories, and cities.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census_gdp_coded <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">unique</span>(<span style="color:#50fa7b">merge</span>(census_gdp, codelist[, <span style="color:#50fa7b">c</span>(<span style="color:#f1fa8c">&#34;cpro&#34;</span>, <span style="color:#f1fa8c">&#34;codauto&#34;</span>)], all.x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>))
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">names</span>(census_gdp_coded)[8] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;x2000&#34;</span> <span style="color:#6272a4">#Change 2000 to x2000 column name</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">names</span>(census_gdp_coded)[9] <span style="color:#ff79c6">&lt;-</span> <span style="color:#f1fa8c">&#34;x2019&#34;</span> <span style="color:#6272a4">#Change 2019 to x2019 column name</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>census_gdp_province <span style="color:#ff79c6">&lt;-</span> census_gdp_coded <span style="color:#ff79c6">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">distinct</span>(provincia, .keep_all <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>) <span style="color:#ff79c6">%&gt;%</span> <span style="color:#6272a4">#Choose unique instance of provincia</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">select</span>(<span style="color:#f1fa8c">&#34;cpro&#34;</span>, <span style="color:#f1fa8c">&#34;provincia&#34;</span>, <span style="color:#f1fa8c">&#34;x2000&#34;</span>, <span style="color:#f1fa8c">&#34;x2019&#34;</span>, <span style="color:#f1fa8c">&#34;codauto&#34;</span>) <span style="color:#6272a4">#Keep useful columns</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>spain_sf <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">esp_get_prov</span>() <span style="color:#6272a4"># Province borders</span>
+</span></span><span style="display:flex;"><span>spain_gdp_sf <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">merge</span>(spain_sf, census_gdp_province)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Can <span style="color:#ff79c6">&lt;-</span> <span style="color:#50fa7b">esp_get_can_box</span>() <span style="color:#6272a4"># Box in bottom left corner of map</span>
+</span></span></code></pre></div><p>Four plots are made from the GDPPC data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>Provinces_2000 <span style="color:#ff79c6">&lt;-</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggplot</span>(spain_gdp_sf) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(<span style="color:#50fa7b">aes</span>(fill <span style="color:#ff79c6">=</span> x2000),
+</span></span><span style="display:flex;"><span>    color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>    lwd <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">.05</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(data <span style="color:#ff79c6">=</span> Can, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey40&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf_label</span>(<span style="color:#50fa7b">aes</span>(label <span style="color:#ff79c6">=</span> provincia),
+</span></span><span style="display:flex;"><span>    fill <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;white&#34;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.2</span>,
+</span></span><span style="display:flex;"><span>    label.size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">scale_fill_gradientn</span>(
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">hcl.colors</span>(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;Cividis&#34;</span>, rev <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>),
+</span></span><span style="display:flex;"><span>    n.breaks <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>    limits <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">10000</span>, <span style="color:#bd93f9">37000</span>),
+</span></span><span style="display:flex;"><span>    guide <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">guide_legend</span>(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC / €&#34;</span>)
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme_void</span>() <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme</span>(legend.position <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">0.1</span>, <span style="color:#bd93f9">0.6</span>)) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggtitle</span>(<span style="color:#f1fa8c">&#34;Economic Production of Spanish Provinces in 2000&#34;</span>, subtitle <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Inflation Adjusted (2019 Euros)&#34;</span>)
+</span></span><span style="display:flex;"><span>Provinces_2000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ggsave</span>(<span style="color:#f1fa8c">&#34;GDPPC_2000.png&#34;</span>, dpi <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">800</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/posts/2022-09-20-Spain-GDPpc/GDPPC_2000.png" alt="">
+
+<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>Provinces_2019 <span style="color:#ff79c6">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggplot</span>(spain_gdp_sf) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(<span style="color:#50fa7b">aes</span>(fill <span style="color:#ff79c6">=</span> x2019),
+</span></span><span style="display:flex;"><span>    color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>    lwd <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">.05</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(data <span style="color:#ff79c6">=</span> Can, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey40&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf_label</span>(<span style="color:#50fa7b">aes</span>(label <span style="color:#ff79c6">=</span> provincia),
+</span></span><span style="display:flex;"><span>    fill <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;white&#34;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.2</span>,
+</span></span><span style="display:flex;"><span>    label.size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    colour <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;black&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">scale_fill_gradientn</span>(
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">hcl.colors</span>(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;Cividis&#34;</span>, rev <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>),
+</span></span><span style="display:flex;"><span>    n.breaks <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>    limits <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">10000</span>, <span style="color:#bd93f9">37000</span>),
+</span></span><span style="display:flex;"><span>    guide <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">guide_legend</span>(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC / €&#34;</span>)
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme_void</span>() <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme</span>(legend.position <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">0.1</span>, <span style="color:#bd93f9">0.6</span>)) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggtitle</span>(<span style="color:#f1fa8c">&#34;Economic Production of Spanish Provinces in 2019&#34;</span>, subtitle <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Inflation Adjusted (2019 Euros)&#34;</span>)
+</span></span><span style="display:flex;"><span>Provinces_2019
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ggsave</span>(<span style="color:#f1fa8c">&#34;GDPPC_2019.png&#34;</span>, dpi <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">800</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/posts/2022-09-20-Spain-GDPpc/GDPPC_2019.png" alt="">
+
+<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>spain_gdp_sf <span style="color:#ff79c6">&lt;-</span> spain_gdp_sf <span style="color:#ff79c6">%&gt;%</span> <span style="color:#6272a4">#Create Absolute and Percent Columns</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">mutate</span>(Absolute <span style="color:#ff79c6">=</span> x2019<span style="color:#ff79c6">-</span>x2000,
+</span></span><span style="display:flex;"><span>         Percent <span style="color:#ff79c6">=</span> (x2019<span style="color:#ff79c6">-</span>x2000)<span style="color:#ff79c6">/</span>x2000<span style="color:#ff79c6">*</span><span style="color:#bd93f9">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Provinces_Absolute_Change <span style="color:#ff79c6">&lt;-</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggplot</span>(spain_gdp_sf) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(<span style="color:#50fa7b">aes</span>(fill <span style="color:#ff79c6">=</span> Absolute),
+</span></span><span style="display:flex;"><span>    color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>    lwd <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">.05</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(data <span style="color:#ff79c6">=</span> Can, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey40&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf_label</span>(<span style="color:#50fa7b">aes</span>(label <span style="color:#ff79c6">=</span> provincia),
+</span></span><span style="display:flex;"><span>    fill <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;white&#34;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.2</span>,
+</span></span><span style="display:flex;"><span>    label.size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    colour <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;black&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">scale_fill_gradientn</span>(
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">hcl.colors</span>(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;Cividis&#34;</span>, rev <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>),
+</span></span><span style="display:flex;"><span>    n.breaks <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>    guide <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">guide_legend</span>(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC Growth / €&#34;</span>)
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme_void</span>() <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme</span>(legend.position <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">0.1</span>, <span style="color:#bd93f9">0.6</span>)) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggtitle</span>(<span style="color:#f1fa8c">&#34;Economic Growth of Spanish Provinces, 2000 to 2019, Absolute&#34;</span>, subtitle <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Inflation Adjusted (2019 Euros)&#34;</span>)
+</span></span><span style="display:flex;"><span>Provinces_Absolute_Change
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ggsave</span>(<span style="color:#f1fa8c">&#34;GDPPC_Absolute_Change.png&#34;</span>, dpi <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">800</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/posts/2022-09-20-Spain-GDPpc/GDPPC_Absolute_Change.png" alt="">
+
+<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>Provinces_Percent_Change <span style="color:#ff79c6">&lt;-</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggplot</span>(spain_gdp_sf) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(<span style="color:#50fa7b">aes</span>(fill <span style="color:#ff79c6">=</span> Percent),
+</span></span><span style="display:flex;"><span>    color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>    lwd <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">.05</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(data <span style="color:#ff79c6">=</span> Can, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey40&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf_label</span>(<span style="color:#50fa7b">aes</span>(label <span style="color:#ff79c6">=</span> provincia),
+</span></span><span style="display:flex;"><span>    fill <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;white&#34;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.2</span>,
+</span></span><span style="display:flex;"><span>    label.size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    colour <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;black&#34;</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">scale_fill_gradientn</span>(
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">hcl.colors</span>(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;Cividis&#34;</span>, rev <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>),
+</span></span><span style="display:flex;"><span>    n.breaks <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>    guide <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">guide_legend</span>(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC Growth / %&#34;</span>)
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme_void</span>() <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme</span>(legend.position <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">0.1</span>, <span style="color:#bd93f9">0.6</span>)) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggtitle</span>(<span style="color:#f1fa8c">&#34;Economic Growth of Spanish Provinces, 2000 to 2019, Relative&#34;</span>)
+</span></span><span style="display:flex;"><span>Provinces_Percent_Change
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ggsave</span>(<span style="color:#f1fa8c">&#34;GDPPC_Percent_Change.png&#34;</span>, dpi <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">800</span>)
+</span></span></code></pre></div><p>
+  <img src="/img/posts/2022-09-20-Spain-GDPpc/GDPPC_Percent_Change.png" alt="">
+
+<!-- raw HTML omitted --></p>
+<p>An animation is made showcasing the absolute change in GDPPC for each
+province from 2000 to 2019.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>long_spain_gdp_sf <span style="color:#ff79c6">&lt;-</span> <span style="color:#6272a4"># Making a &#34;Year&#34; column where each province has 2000 and 2019</span>
+</span></span><span style="display:flex;"><span>  spain_gdp_sf <span style="color:#ff79c6">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">pivot_longer</span>(
+</span></span><span style="display:flex;"><span>    cols <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">starts_with</span>(<span style="color:#f1fa8c">&#34;x&#34;</span>), 
+</span></span><span style="display:flex;"><span>    names_to <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;year&#34;</span>,
+</span></span><span style="display:flex;"><span>    names_prefix <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;x&#34;</span>,
+</span></span><span style="display:flex;"><span>    names_transform <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">list</span>(year <span style="color:#ff79c6">=</span> as.integer),
+</span></span><span style="display:flex;"><span>    values_to <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC&#34;</span>,
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Provinces_2000_2019 <span style="color:#ff79c6">&lt;-</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggplot</span>(long_spain_gdp_sf) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(<span style="color:#50fa7b">aes</span>(fill <span style="color:#ff79c6">=</span> GDPPC),
+</span></span><span style="display:flex;"><span>    color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey50&#34;</span>,
+</span></span><span style="display:flex;"><span>    lwd <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">.05</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf</span>(data <span style="color:#ff79c6">=</span> Can, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;grey40&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">geom_sf_label</span>(<span style="color:#50fa7b">aes</span>(label <span style="color:#ff79c6">=</span> provincia),
+</span></span><span style="display:flex;"><span>    fill <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;white&#34;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>    size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.2</span>,
+</span></span><span style="display:flex;"><span>    label.size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">scale_fill_gradientn</span>(
+</span></span><span style="display:flex;"><span>    colors <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">hcl.colors</span>(<span style="color:#bd93f9">10</span>, <span style="color:#f1fa8c">&#34;Cividis&#34;</span>, rev <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">TRUE</span>),
+</span></span><span style="display:flex;"><span>    n.breaks <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>    limits <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">10000</span>, <span style="color:#bd93f9">37000</span>),
+</span></span><span style="display:flex;"><span>    guide <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">guide_legend</span>(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;GDPPC / €&#34;</span>)
+</span></span><span style="display:flex;"><span>  ) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme_void</span>() <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">theme</span>(legend.position <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">c</span>(<span style="color:#bd93f9">0.1</span>, <span style="color:#bd93f9">0.6</span>)) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">ggtitle</span>(<span style="color:#f1fa8c">&#34;Economic Production of Spanish Provinces Transition from 2000 to 2019&#34;</span>, subtitle <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Inflation Adjusted (2019 Euros)&#34;</span>) <span style="color:#ff79c6">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">transition_states</span>(year, wrap<span style="color:#ff79c6">=</span><span style="color:#ff79c6">FALSE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">animate</span>(
+</span></span><span style="display:flex;"><span>  Provinces_2000_2019,
+</span></span><span style="display:flex;"><span>  width <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2720</span>, height <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1680</span>, res<span style="color:#ff79c6">=</span><span style="color:#bd93f9">330</span>,
+</span></span><span style="display:flex;"><span>  renderer <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">gifski_renderer</span>()
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">anim_save</span>(<span style="color:#f1fa8c">&#34;Provinces_2000_2019_Transition.gif&#34;</span>, animation <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">last_animation</span>())
+</span></span></code></pre></div><p>
+  <img src="/img/posts/2022-09-20-Spain-GDPpc/Provinces_2000_2019_Transition.gif" alt="">
+
+<!-- raw HTML omitted --></p>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/09/01/Exploring-Statistics/" data-toggle="tooltip" data-placement="top" title="Exploring Statistics">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/foundation" title="foundation">
+                            foundation
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/project" title="project">
+                            project
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/r" title="r">
+                            r
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/rstudio" title="rstudio">
+                            rstudio
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/statistics" title="statistics">
+                            statistics
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/visualisation" title="visualisation">
+                            visualisation
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:aitorg88@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/AitorGuti">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Aitor&#39;s Cloud 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

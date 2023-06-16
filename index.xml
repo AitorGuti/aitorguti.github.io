@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aitorguti.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Economic Output of Spanish Provinces</title>
-      <link>https://aitorguti.github.io/2022/09/20/spain-gdppc/</link>
+      <link>https://aitorguti.github.io/2022/09/20/Spain-dppc/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://aitorguti.github.io/2022/09/20/spain-gdppc/</guid>
+      <guid>https://aitorguti.github.io/2022/09/20/Spain-dppc/</guid>
       <description>GDP per capita of Spanish Regions Data from the Instituto Nacional de Estadística and the Instituto Geográfico Nacional. Euros Inflation Adjusted to 2019
 First, the 2000 and 2019 figures of GDP per capita are imported.
 GDPpc_spain &amp;lt;- read_csv(&amp;#34;GDP_Per_Capita_Spanish_Regions_2000_2019.csv&amp;#34;) #Import Spanish Provinces Data names(GDPpc_spain)[1]&amp;lt;-paste(&amp;#34;provincia&amp;#34;) # Change Province to provincia head(GDPpc_spain, 1) ## # A tibble: 1 × 3## provincia `2000` `2019`## &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;## 1 Almería 15186 21196The dataframe is cleaned for merging with one from mapSpain.</description>

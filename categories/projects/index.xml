@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rstudio on Aitor&#39;s Cloud</title>
-    <link>https://aitorguti.github.io/tags/rstudio/</link>
-    <description>Recent content in Rstudio on Aitor&#39;s Cloud</description>
+    <title>Projects on Aitor&#39;s Cloud</title>
+    <link>https://aitorguti.github.io/categories/projects/</link>
+    <description>Recent content in Projects on Aitor&#39;s Cloud</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aitorguti.github.io/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aitorguti.github.io/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Economic Output of Spanish Provinces</title>
       <link>https://aitorguti.github.io/2022/09/20/Spain-dppc/</link>
