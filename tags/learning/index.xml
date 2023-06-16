@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning on Aitor&#39;s Cloud</title>
+    <link>https://aitorguti.github.io/tags/learning/</link>
+    <description>Recent content in Learning on Aitor&#39;s Cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aitorguti.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Statistics</title>
+      <link>https://aitorguti.github.io/2022/09/01/Exploring-Statistics/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aitorguti.github.io/2022/09/01/Exploring-Statistics/</guid>
+      <description>Foundational Concepts Population, Sample, and Sample Size A population is a defined set of individuals, and a sample is a randomly selected sub-set of a population. For example: As of 2022, Spain has 4.7M people. A sample of the Spanish population would be a random selection of 1 - to - 4.69M people in Spain.
+Sample size determines the accuracy of any data calculated from a sample. This accuracy can be split into two concepts:</description>
+    </item>
+    
+  </channel>
+</rss>

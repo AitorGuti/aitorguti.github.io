@@ -22,12 +22,47 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://aitorguti.github.io/tags/project/</loc>
+    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://aitorguti.github.io/categories/project/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://aitorguti.github.io/tags/r/</loc>
+    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://aitorguti.github.io/tags/rstudio/</loc>
+    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://aitorguti.github.io/tags/</loc>
+    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://aitorguti.github.io/tags/visualisation/</loc>
+    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://aitorguti.github.io/2022/09/01/Exploring-Statistics/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://aitorguti.github.io/tags/foundation/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://aitorguti.github.io/tags/learning/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -50,10 +85,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://aitorguti.github.io/search/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://aitorguti.github.io/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
